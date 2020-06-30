@@ -1,0 +1,148 @@
+#apiPanel {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
+
+
+  .apiListPanel {
+    height: 450px;
+    width: 1000px;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    max-height: 700px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    box-shadow: 0px 10px 15px 0px rgba(50, 50, 50, 0.26);
+    -ms-box-shadow: 0px 10px 15px 0px rgba(50, 50, 50, 0.26);
+    -o-box-shadow: 0px 10px 15px 0px rgba(50, 50, 50, 0.26);
+    -moz-box-shadow: 0px 10px 15px 0px rgba(50, 50, 50, 0.26);
+    -webkit-box-shadow: 0px 10px 15px 0px rgba(50, 50, 50, 0.26);
+    overflow: hidden;
+
+
+
+    .ant-layout-header {
+      display: flex;
+      justify-content: space-between;
+      padding: 0px 15px;
+      border-bottom: 1px solid #e0e0e0;
+      height: 40px;
+      align-items: center;
+      min-height: 20px;
+      background: #6c6b6b;
+      color: #fff;
+
+      .iconWidget {
+        width: 50px;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+    }
+
+    .ant-layout-content {
+      background: #fff;
+      color: #222;
+      height: 100%;
+      // overflow-y: auto;
+    }
+
+  }
+
+  .apiSettingPanel {
+    height: 800px;
+    width: 600px;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    max-height: 700px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    box-shadow: 0px 10px 15px 0px rgba(50, 50, 50, 0.26);
+    -ms-box-shadow: 0px 10px 15px 0px rgba(50, 50, 50, 0.26);
+    -o-box-shadow: 0px 10px 15px 0px rgba(50, 50, 50, 0.26);
+    -moz-box-shadow: 0px 10px 15px 0px rgba(50, 50, 50, 0.26);
+    -webkit-box-shadow: 0px 10px 15px 0px rgba(50, 50, 50, 0.26);
+    overflow: hidden;
+
+    .ant-layout-header {
+      display: flex;
+      justify-content: space-between;
+      padding: 0px 15px;
+      border-bottom: 1px solid #e0e0e0;
+      height: 40px;
+      align-items: center;
+      min-height: 20px;
+      background: #6c6b6b;
+      color: #fff;
+
+      .iconWidget {
+        width: 50px;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+    }
+
+    .ant-layout-content {
+      background: #fff;
+      color: #222;
+      height: 100%;
+      overflow-y: auto;
+
+      .ant-row {
+        height: 60px;
+        padding: 0 30px 0 0;
+        margin: 0;
+
+        .ant-col {
+          text-align: right;
+
+          .ant-select-selector {
+            padding: 0px 2px;
+
+            .ant-select-selection-item {
+              margin: 0px;
+              text-align: left;
+              padding: 0 10px 0 4px;
+            }
+          }
+
+          .ant-select-arrow {
+            right: 6px;
+          }
+
+
+          .ant-input {
+            width: 160px;
+          }
+
+        }
+      }
+
+      .ant-collapse-content-box {
+        padding: 0px;
+      }
+
+      .ant-collapse-ghost {
+        .ant-collapse-header {
+          padding: 0px;
+        }
+      }
+    }
+  }
+}
+
+// 隐藏ul的滚动条
+.ant-layout-content::-webkit-scrollbar {
+  display: none;
+}
