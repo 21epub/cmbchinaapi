@@ -36,20 +36,20 @@ const ApiSettingPanel = (props: any) => {
 
 
   const BackParamsCollapse = (value: any) => {
-    let margin = 20 * count;
+    let number = 2 * count;
     count = count + 1;
     return (
       Object.keys(value).map((key: any, index: any) => {
         if (value[key].children && value[key].type == 'Object') {
           return (
-            <Collapse defaultActiveKey={['1']} ghost key={index} style={{ marginLeft: margin }} >
+            <Collapse defaultActiveKey={['1']} ghost key={index}  >
               <Panel header={
-                <Row justify='end' align='middle' >
+                <Row justify='end' align='middle' gutter={10} style={{'width':100 - number  + '%','marginLeft':number + '%'}}>
                   <Col span={7} >
-                    <Input defaultValue={key} style={{ 'width': '120px' }} />
+                    <Input defaultValue={key} style={{ 'width': '74%' }} />
                   </Col>
                   <Col span={4} >
-                    <Select defaultValue={value[key].type} style={{ width: 80 }} onChange={handleChange}>
+                    <Select defaultValue={value[key].type} style={{ 'width': '100%' }} onChange={handleChange}>
                       <Option value="String">字符</Option>
                       <Option value="Integer">整型</Option>
                       <Option value="Array">数组</Option>
@@ -58,7 +58,7 @@ const ApiSettingPanel = (props: any) => {
                     </Select>
                   </Col>
                   <Col span={13} >
-                    <Input defaultValue={value[key].description} style={{ 'width': 290 - margin }} />
+                    <Input defaultValue={value[key].description} style={{ 'width': '100%' }} />
                   </Col>
                 </Row>
               } key="1" >
@@ -68,54 +68,14 @@ const ApiSettingPanel = (props: any) => {
               </Panel>
             </Collapse>
           )
-        } else if (value[key].children && value[key].type == 'Array') {
-          return (
-            <Collapse defaultActiveKey={['1']} ghost key={index} style={{ marginLeft: margin }} >
-              <Panel header={
-                <Row justify='end' align='middle' >
-                  <Col span={7} >
-                    <Input defaultValue={key} style={{ 'width': '120px' }} />
-                  </Col>
-                  <Col span={4} >
-                    <Select defaultValue={value[key].type} style={{ width: 80 }} onChange={handleChange}>
-                      <Option value="String">字符</Option>
-                      <Option value="Integer">整型</Option>
-                      <Option value="Array">数组</Option>
-                      <Option value="Object">对象</Option>
-                      <Option value="Float">浮点</Option>
-                    </Select>
-                  </Col>
-                  <Col span={13} >
-                    <Input defaultValue={value[key].description} style={{ 'width': 290 - margin }} />
-                  </Col>
-                </Row>
-              } key="1" >
-                {
-                  value[key].children.map((item: any, index: any) => {
-                    return (
-                      <Collapse defaultActiveKey={['1']} ghost key={index} style={{ marginLeft: margin - 20 }} >
-                        <Panel header={index} key="1" >
-                          {
-                            value[key].children.map((items: any, index: any) => {
-                              return BackParamsCollapse(items)
-                            })
-                          }
-                        </Panel>
-                      </Collapse>
-                    )
-                  })
-                }
-              </Panel>
-            </Collapse>
-          )
         } else {
           return (
-            <Row justify='end' align='middle' key={index} style={{ marginLeft: margin }}>
+            <Row justify='end' align='middle' key={index}  gutter={10} style={{'width':100 - number  + '%','marginLeft':number + '%'}}>
               <Col span={7} >
-                <Input defaultValue={key} style={{ 'width': '120px' }} />
+                <Input defaultValue={key} style={{ 'width': '74%' }} />
               </Col>
               <Col span={4} >
-                <Select defaultValue={value[key].type} style={{ width: 80 }} onChange={handleChange}>
+                <Select defaultValue={value[key].type} style={{ 'width': '100%' }} onChange={handleChange}>
                   <Option value="String">字符</Option>
                   <Option value="Integer">整型</Option>
                   <Option value="Array">数组</Option>
@@ -124,18 +84,14 @@ const ApiSettingPanel = (props: any) => {
                 </Select>
               </Col>
               <Col span={13} >
-                <Input defaultValue={value[key].description} style={{ 'width': 290 - margin }} />
+                <Input defaultValue={value[key].description} style={{ 'width': '100%' }} />
               </Col>
             </Row>
           )
         }
       })
     )
-  }
-
-  const ArrayData = () => {
-
-  }
+    }
 
   return (
     <>
