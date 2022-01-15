@@ -34,7 +34,7 @@
     "react-hooks-redux": "^0.10.4",
     "react-redux": "^7.2.0",
     "redux": "^4.0.5",
-    "shelljs": "^0.8.3"
+    "shelljs": "^0.8.5"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
